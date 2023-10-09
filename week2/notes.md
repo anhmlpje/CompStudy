@@ -1,1 +1,1 @@
-week2 - C bootcamp 1
+week2 - C bootcamp week 1
