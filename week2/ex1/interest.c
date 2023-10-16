@@ -6,7 +6,7 @@ int main() {
 
     printf("Enter the principal: ");
     scanf("%f", &principal);
-    printf("Enter the rate: %%"); 
+    printf("Enter the rate:%%"); 
     scanf("%f", &rate);
     printf("Enter how many years do you want save for: ");
     scanf("%d", &time);
