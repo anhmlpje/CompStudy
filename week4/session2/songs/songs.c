@@ -64,7 +64,7 @@ int main()
     SONG_DATA songs[100];
     int buffer_size = 250;
     char line[buffer_size];
-    int counter=0;
+    int i = 0;//counter
 
     FILE *input = fopen("song_data.txt", "r");
 
@@ -75,19 +75,21 @@ int main()
     char title[100];
     char year[4];
 
+
     while (fgets(line, buffer_size, input))
-    {   
-        // first we will get the info from the line
-        tokeniseRecord(line,",",pos,artist,title,year);
-        // but then what??
-        
-        strcpy(songs[counter].artist, artist);
-        strcpy(songs[counter].title, title);
-        strcpy(songs[counter].year, year);
-        songs[counter].position = atoi(pos);
-        counter++;
+    {
+    // first we will get the info from the line
+    tokeniseRecord(line, ",", pos, artist, title, year);
+
+    // The rest of your code
+    strcpy(songs[i].artist, artist);
+    strcpy(songs[i].title, title);
+    strcpy(songs[i].year, year);
+    songs[i].position = atoi(pos);
+    printf("%s/%s/%s\n", artist, title, year);
+    i++;
     }
-    printf("%d\n", counter);
+    printf("\nNumber of records in file:%d\n", i);
 
     return 0;
 }
