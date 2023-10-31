@@ -50,7 +50,7 @@ int main() {
     FILE *input = fopen("FitnessData_2023.csv", "r");
 
     char date[11];
-	char time[6];
+    char time[6];
     char stepsStr[20];
     int steps;
 
@@ -63,10 +63,15 @@ int main() {
     strcpy(StepsTask[i].date, date);
     strcpy(StepsTask[i].time, time);
     StepsTask[i].steps = steps;
-    printf("%s/%s/%d\n", date, time, steps);
     i++;
     }
+    fclose(input);
+    
     printf("Number of records in file: %d\n", i);
+
+    for(int n = 0; n < 3; n++){
+        printf("%s/%s/%d\n", StepsTask[n].date, StepsTask[n].time, StepsTask[n].steps);
+    }
 
     return 0;
 }
