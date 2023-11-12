@@ -3,6 +3,8 @@
 #include <string.h>
 #include "FitnessDataStruct.h"
 
+int i;//recordcounter
+FITNESS_DATA st[200];//StepsTask data storage
 
 void tokeniseRecord(const char *input, const char *delimiter,
                     char *date, char *time, char *steps) {
@@ -24,22 +26,16 @@ void tokeniseRecord(const char *input, const char *delimiter,
     }
     
     free(inputCopy);
-                }
+    }
 
-    void maxsteps();
-
-
-
-int main() {
-    FITNESS_DATA StepsTask[100];
+void inputdata() {
     int buffer_size = 250;
     char line[buffer_size];
-    int i = 0;//counter
+    i = 0;
 
     FILE *input = fopen("FitnessData_2023.csv", "r");
         if(input == NULL){
-            printf("Error.\n");
-            return 1;
+            printf("Error: Could not open the file.\n");
         }
 
     char date[11];
@@ -53,23 +49,18 @@ int main() {
 
     steps = atoi(stepsStr);
 
-    strcpy(StepsTask[i].date, date);
-    strcpy(StepsTask[i].time, time);
-    StepsTask[i].steps = steps;
+    strcpy(st[i].date, date);
+    strcpy(st[i].time, time);
+    st[i].steps = steps;
     i++;
     }
     fclose(input);
+}
 
-    char option;
+void A_check() {
     char checktname[100];
     char inputname[] = "FitnessData_2023.csv";
 
-    printf("Menu Options: \n");
-    printf("Enter choice: ");
-    scanf("%c", &option);
-    switch (option)
-    {
-    case 'A':
     printf("Input filename: ");
     scanf("%s", checktname);
     if(strcmp(checktname, inputname)){
@@ -78,28 +69,94 @@ int main() {
     else{
         printf("File successfully loaded.\n");
     }
-    break;
+}
 
-    case 'B':
-    printf("Total records: %d", i);
-    break;
+void C_Minimumsteps() {
+    inputdata();
+    int mini = 1; //Minimum steps
+    int n;
+    int nnum;
+    for(n = 0; n < i; n++){
+        if(mini < st[n].steps){
+            mini = st[n].steps;
+            nnum = n;
+        }
+    }
+    printf("Fewest steps: %s %s\n", st[nnum].date, st[nnum].time);
+}
 
-    case 'C':
-    break;
+void D_Maximumsteps() {
+    inputdata();
+    int maxs = 0; //Maximum steps
+    int n;
+    int nnum;
+    for(n = 0; n < i; n++){
+        if(st[n].steps > maxs){
+            maxs = st[n].steps;
+            nnum = n;
+        }
+    }
+    printf("Largest steps: %s %s\n", st[nnum].date, st[nnum].time);
+}
 
-    case 'D':
-    break;
+void E_mean() {
+    int mean;
+    int sum = 0;
+    int n;
 
-    case 'E':
-    break;
+    inputdata();
+    for(n = 0; n < i; n++){
+        sum += st[n].steps;
+    }
 
-    case 'F':
-    break;
+    mean = sum / i;
+    printf("Mean step count: %d\n", mean);
+}
 
-    case 'Q':
-    break;
+int main() {
+    char option;
+    printf("Menu Options:\n"
+           "A: Specify the filename to be imported\n"
+           "B: Display the total number of records in the file\n"
+           "C: Find the date and time of the timeslot with the fewest steps\n"
+           "D: Find the date and time of the timeslot with the largest number of steps\n"
+           "E: Find the mean step count of all the records in the file\n"
+           "F: Find the longest continuous period where the step count is above 500 steps\n"
+           "Q: Quit\n");
+    printf("Enter choice: ");
+    scanf("%c", &option);
 
-    default:
+
+    switch (option)
+    {
+        case 'A':
+            A_check();
+        break;
+
+        case 'B':
+            inputdata();
+            printf("Total records: %d\n", i);
+        break;
+
+        case 'C':
+            C_Minimumsteps();
+        break;
+
+        case 'D':
+            D_Maximumsteps();
+        break;
+
+        case 'E':
+            E_mean();
+        break;
+
+        case 'F':
+        break;
+
+        case 'Q'://quit
+        break;
+
+        default:
         printf("Invalid choice. Try again.\n");
     }
 
