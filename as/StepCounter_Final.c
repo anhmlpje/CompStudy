@@ -115,31 +115,34 @@ void E_mean() {
     printf("Mean step count: %d\n", mean);
 }
 
-void E_continuous_period() {
+void F_continuous_period() {
     inputdata();
     int con1 = 0;//continuous period counter
     int con2 = 0;
-    int start;
+    int start1;
+    int start2;
+    int finish = 0;
 
     for(int n = 0; n < i; n++){
         if(st[n].steps > 500){
             con1++;
-            if(con1 == 0){
-                start = n;
+            if(con1 == 1){
+                start1 = n;
             }
         }else{
-            if(con1 > con2){
-                con2 = con1;
-                con1 =0;
+            con1 = 0;
             }
-        }
         
         if(con1 > con2){
             con2 = con1;
+            start2 =start1;
         }
     }
 
-    printf("%d\n", con2);
+    finish = start2 + con2 - 1;
+
+    printf("Longest period start: %s %s\n", st[start2].date, st[start2].time);
+    printf("Longest period end: %s %s\n", st[finish].date, st[finish].time);
 }
 
 int main() {
@@ -180,7 +183,7 @@ int main() {
         break;
 
         case 'F':
-            E_continuous_period();
+            F_continuous_period();
         break;
 
         case 'Q'://quit
