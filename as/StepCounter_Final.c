@@ -73,11 +73,12 @@ void A_check() {
 
 void C_Minimumsteps() {
     inputdata();
-    int mini = 1; //Minimum steps
+    int mini; //Minimum steps
     int n;
     int nnum;
+    mini = st[0].steps;
     for(n = 0; n < i; n++){
-        if(mini < st[n].steps){
+        if(st[n].steps < mini){
             mini = st[n].steps;
             nnum = n;
         }
@@ -87,9 +88,10 @@ void C_Minimumsteps() {
 
 void D_Maximumsteps() {
     inputdata();
-    int maxs = 0; //Maximum steps
+    int maxs; //Maximum steps
     int n;
     int nnum;
+    maxs = st[0].steps;
     for(n = 0; n < i; n++){
         if(st[n].steps > maxs){
             maxs = st[n].steps;
@@ -111,6 +113,33 @@ void E_mean() {
 
     mean = sum / i;
     printf("Mean step count: %d\n", mean);
+}
+
+void E_continuous_period() {
+    inputdata();
+    int con1 = 0;//continuous period counter
+    int con2 = 0;
+    int start;
+
+    for(int n = 0; n < i; n++){
+        if(st[n].steps > 500){
+            con1++;
+            if(con1 == 0){
+                start = n;
+            }
+        }else{
+            if(con1 > con2){
+                con2 = con1;
+                con1 =0;
+            }
+        }
+        
+        if(con1 > con2){
+            con2 = con1;
+        }
+    }
+
+    printf("%d\n", con2);
 }
 
 int main() {
@@ -151,6 +180,7 @@ int main() {
         break;
 
         case 'F':
+            E_continuous_period();
         break;
 
         case 'Q'://quit
