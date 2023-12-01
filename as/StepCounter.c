@@ -28,15 +28,21 @@ void tokeniseRecord(const char *input, const char *delimiter,
     free(inputCopy);
     }
 
-void inputdata() {
+int inputdata() {
+    char inputname[100];
     int buffer_size = 250;
     char line[buffer_size];
     i = 0;
 
-    FILE *input = fopen("FitnessData_2023.csv", "r");
-        if(input == NULL){
-            printf("Error: Could not open the file.\n");
-        }
+    printf("Input filename: ");
+    scanf("%s", inputname);
+    FILE *input = fopen(inputname, "r");
+    if(!input){
+        printf("Error: Could not find or open the file.\n");
+        return 1;
+    }else{
+        printf("File successfully loaded.\n");
+    }
 
     char date[11];
     char time[6];
@@ -57,22 +63,7 @@ void inputdata() {
     fclose(input);
 }
 
-void A_check() {
-    char checktname[100];
-    char inputname[] = "FitnessData_2023.csv";
-
-    printf("Input filename: ");
-    scanf("%s", checktname);
-    if(strcmp(checktname, inputname)){
-        printf("Error: Could not find or open the file.\n");
-    }
-    else{
-        printf("File successfully loaded.\n");
-    }
-}
-
 void C_Minimumsteps() {
-    inputdata();
     int mini; //Minimum steps
     int n;
     int nnum;
@@ -87,7 +78,6 @@ void C_Minimumsteps() {
 }
 
 void D_Maximumsteps() {
-    inputdata();
     int maxs; //Maximum steps
     int n;
     int nnum;
@@ -106,17 +96,15 @@ void E_mean() {
     int sum = 0;
     int n;
 
-    inputdata();
     for(n = 0; n < i; n++){
         sum += st[n].steps;
     }
 
-    mean = sum / i;
+    mean = (sum + i / 2) / i;
     printf("Mean step count: %d\n", mean);
 }
 
 void F_continuous_period() {
-    inputdata();
     int con1 = 0;//continuous period counter
     int con2 = 0;
     int start1;
@@ -147,51 +135,63 @@ void F_continuous_period() {
 
 int main() {
     char option;
-    printf("Menu Options:\n"
-           "A: Specify the filename to be imported\n"
-           "B: Display the total number of records in the file\n"
-           "C: Find the date and time of the timeslot with the fewest steps\n"
-           "D: Find the date and time of the timeslot with the largest number of steps\n"
-           "E: Find the mean step count of all the records in the file\n"
-           "F: Find the longest continuous period where the step count is above 500 steps\n"
-           "Q: Quit\n");
-    printf("Enter choice: ");
-    scanf("%c", &option);
-
-
-    switch (option)
+    while (1)
     {
-        case 'A':
-            A_check();
-        break;
+        printf("Menu Options:\n"
+            "A: Specify the filename to be imported\n"
+            "B: Display the total number of records in the file\n"
+            "C: Find the date and time of the timeslot with the fewest steps\n"
+            "D: Find the date and time of the timeslot with the largest number of steps\n"
+            "E: Find the mean step count of all the records in the file\n"
+            "F: Find the longest continuous period where the step count is above 500 steps\n"
+            "Q: Quit\n");
+        printf("Enter choice: ");
+        scanf("%c", &option);
 
-        case 'B':
-            inputdata();
-            printf("Total records: %d\n", i);
-        break;
+        switch (option)
+        {
+            case 'a':
+            case 'A':
+                if(inputdata() == 1){
+                    return 1;
+                }
+            break;
 
-        case 'C':
-            C_Minimumsteps();
-        break;
+            case 'b':
+            case 'B':
+                printf("Total records: %d\n", i);
+            break;
 
-        case 'D':
-            D_Maximumsteps();
-        break;
+            case 'c':
+            case 'C':
+                C_Minimumsteps();
+            break;
 
-        case 'E':
-            E_mean();
-        break;
+            case 'd':
+            case 'D':
+                D_Maximumsteps();
+            break;
 
-        case 'F':
-            F_continuous_period();
-        break;
+            case 'e':
+            case 'E':
+                E_mean();
+            break;
+            
+            case 'f':
+            case 'F':
+                F_continuous_period();
+            break;
 
-        case 'Q'://quit
-        break;
+            case 'q':
+            case 'Q'://quit
+            return 0;
 
-        default:
-        printf("Invalid choice. Try again.\n");
+            default:
+            printf("Invalid choice. Try again.\n");
+        }
+
+        while (getchar() != '\n');
     }
 
-   return 0;
+    return 0;
 }
