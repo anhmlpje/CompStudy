@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hedio Kojima Productions</title>
+<style>
+    body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0;
+    background-color: #f0f0f0; /* Light grey background for the body */
+    }
+    .navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.7);
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    }
+    .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    }
+    .navbar a:hover {
+    text-decoration: underline;
+    background-color: transparent;
+    }
+    .navbar img {
+    height: 50px;
+    }
+    .home-link {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    padding-right: 0;
+    }
+    .home-link img {
+    margin-right: 10px;
+    }
+
+    /* Page content style */
+    .content-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px; /* Adjust top margin to navbar height */
+        margin-left: 10%; /* Increase left margin */
+        margin-right: 10%; /* Increase right margin */
+    }
+    .image-block, .text-block {
+        flex: 1;
+        margin: 10px;
+        background-color: #d9d9d9; /* Grey background */
+    }
+    .image-block img {
+        width: 100%;
+        display: block;
+    }
+    .text-block {
+        padding: 20px;
+        text-align: justify;
+    }
+    /* This ensures the second row items are flipped */
+    .content-row:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="home.html" class="home-link">
+        <img src="Kojima-Productions-Logo.png" alt="Kojima Productions Logo">
+        HOME
+    </a>
+    <a href="about_kojima.html">About Kojima</a>
+    <a href="products.html">Products</a>
+    <a href="photos.html">Photos</a>
+    <a href="contact.html">Contacting World</a>
+</div>
+
+<div class="content-row">
+    <div class="image-block">
+        <img src="product1.png" alt="Photo 1">
+    </div>
+    <div class="text-block">
+        <p>Metal Gear Solid V: The Phantom Pain (メタルギアソリッドV ファントムペイン Metaru Gia Soriddo 
+            Faibu: Fantomu Pein?) is a canonical installment in the Metal Gear series. It was developed 
+            by Kojima Productions using their self-programmed Fox Engine and published by Konami. As with 
+            previous Metal Gear Solid titles, Hideo Kojima designed, wrote, directed, and produced the 
+            game. This was the final Metal Gear game Kojima worked on prior to his departure from Konami 
+            in October 2015</p>
+        <p>Hideo Kojima outlined the theme of the series as being "GENE” ⇒ ”MEME” ⇒ ”SCENE” ⇒ 
+            "SENSE" ⇒ ”PEACE” ⇒ ”RACE/REVENGE", with the story touching upon the misunderstanding, 
+            prejudice, hatred, and conflict caused by the difference of language, race, custom, culture, 
+            and preference</p>
+    </div>
+</div>
+
+<div class="content-row">
+    <div class="image-block">
+        <img src="product2.jpg" alt="Photo 2">
+    </div>
+    <div class="text-block">
+        <p>The game is set in the United States following a cataclysmic event which caused destructive 
+            creatures to begin roaming the Earth. Players control Sam Porter Bridges (Norman Reedus), 
+            a courier tasked with delivering supplies to isolated colonies and reconnecting them via 
+            a wireless communications network. Alongside Reedus, the game features actors Mads Mikkelsen, 
+            Léa Seydoux, Margaret Qualley, Troy Baker, Tommie Earl Jenkins, and Lindsay Wagner, 
+            in addition to the likenesses of film directors Guillermo del Toro and Nicolas Winding Refn, 
+            as supporting characters.</p>
+    </div>
+</div>
+
+</body>
+</html>

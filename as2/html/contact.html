@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hedio Kojima Productions</title>
+<style>
+    body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0;
+    background-color: #f0f0f0; /* Light grey background for the body */
+    }
+    .navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.7);
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    }
+    .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    }
+    .navbar a:hover {
+    text-decoration: underline;
+    background-color: transparent;
+    }
+    .navbar img {
+    height: 50px;
+    }
+    .home-link {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    padding-right: 0;
+    }
+    .home-link img {
+    margin-right: 10px;
+    }
+
+  .slideshow-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 0px;
+  }
+  .slide {
+    display: none;
+    height: 100vh;
+  }
+  .active {
+    display: block;
+  }
+  .slide img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .slide-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .image-description {
+    background-color: #d9d9d9; /* Light grey background */
+    color: #333; /* Dark grey text color */
+    padding: 20px;
+    text-align: center; /* Center the text */
+  }
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="home.html" class="home-link">
+        <img src="Kojima-Productions-Logo.png" alt="Kojima Productions Logo">
+        HOME
+    </a>
+    <a href="about_kojima.html">About Kojima</a>
+    <a href="products.html">Products</a>
+    <a href="photos.html">Photos</a>
+    <a href="contact.html">Contacting World</a>
+    </div>
+
+<div class="slideshow-container">
+    <div class="slide active">
+      <img src="con.jpg" alt="Concept Image">
+      <div class="slide-text">
+        <p>"HIDEO KOJIMA: CONNECTING WORLDS"</p>
+      </div>
+    </div>
+
+    <div class="image-description">
+    <p>“Our film is a celebration of Death Stranding and video games as an art-form,” said Glen Milner, 
+        Director at Filmworks. “We really wanted to capture Kojima-san's thought process and philosophy 
+        behind the game as much as anything. How cultural influences and life experiences play a key role 
+        in the themes of his work and his creative outlook, not only for Death Stranding, but also for 
+        his own studio.”   </p>
+    <p>Directed by Glen Milner and produced by Ben Hilton for Filmworks, London, HIDEO KOJIMA: CONNECTING 
+        WORLDS is a visually captivating documentary that gives a rare insight into Hideo Kojima's 
+        creative process as he launches his own independent studio and creates the groundbreaking game 
+        DEATH STRANDING. Featuring contributions from visionary artists such as George Miller, Guillermo 
+        del Toro, Nicholas Winding Refn, Grimes, Norman Reedus, Woodkid, Chvrches and many others, this 
+        thoughtful film explores the power and potential of video games as an art form through the work 
+        of an influential talent revered by millions worldwide.</p>
+    </div>
+
+</body>
+</html>

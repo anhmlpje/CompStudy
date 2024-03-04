@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hedio Kojima Productions</title>
+<style>
+    body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0;
+    background-color: #f0f0f0; /* Light grey background for the body */
+    }
+    .navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.7);
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    }
+    .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    }
+    .navbar a:hover {
+    text-decoration: underline;
+    background-color: transparent;
+    }
+    .navbar img {
+    height: 50px;
+    }
+    .home-link {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    padding-right: 0;
+    }
+    .home-link img {
+    margin-right: 10px;
+    }
+
+  .content {
+    margin-top: 80px; /* Space for fixed navbar */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Left and right columns for images, middle for text */
+    grid-gap: 20px;
+  }
+  .image-container {
+    background-color: #d9d9d9; /* Grey border for images */
+    padding: 10px;
+    margin: auto 0; /* Center images vertically */
+    text-align: center;
+  }
+  .image-container img {
+    width: 100%; /* Full width of container */
+    height: auto;
+    display: block; /* Remove any extra space below images */
+  }
+  .text-section {
+    grid-column: 2; /* Place text in the middle column */
+    background-color: #d9d9d9; /* Grey background for text */
+    padding: 60px;
+    color: rgb(71, 67, 67); /* White text */
+    font-size: 1.2em;
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="home.html" class="home-link">
+        <img src="Kojima-Productions-Logo.png" alt="Kojima Productions Logo">
+        HOME
+    </a>
+    <a href="about_kojima.html">About Kojima</a>
+    <a href="products.html">Products</a>
+    <a href="photos.html">Photos</a>
+    <a href="contact.html">Contacting World</a>
+    </div>
+
+    <div class="content">
+        <div class="image-container">
+          <img src="intro1.jpg" alt="Hideo Kojima at an event">
+          <div class="image-caption">Kojima in 2018</div>
+        </div>
+        <div class="text-section">
+          <p>Hideo Kojima (小島 秀夫, Kojima Hideo, born August 24, 1963) is a Japanese video game designer. 
+            He is regarded as an auteur of video games. He developed a strong passion for film and 
+            literature during his childhood and adolescence. In 1986, he was hired by Konami, 
+            for which he designed and wrote Metal Gear (1987) for the MSX2, a game that laid the 
+            foundations for stealth games and the Metal Gear series, his best known and most appreciated 
+            works. At Konami, he also produced the Zone of the Enders series, as well as wrote and designed 
+            Snatcher (1988) and Policenauts (1994), graphic adventure games regarded for their cinematic 
+            presentation.<p>
+            </p>
+            Kojima founded Kojima Productions within Konami in 2005, and he was appointed vice 
+            president of Konami Digital Entertainment in 2011. Kojima Productions split from Konami in 
+            2015, becoming an independent studio. His studio's first game without Konami, Death Stranding, 
+            was released in 2019.
+            <p>
+
+        </div>
+        <div class="image-container">
+          <img src="intro2.jpg" alt="Hideo Kojima giving a thumbs up">
+          <div class="image-caption">Grounded in “Omotenashi,” his culture’s 
+            take on hospitality, Kojima is a Japanese game developer committed 
+            to blending technology, art and science in service to players worldwide. </div>
+        </div>
+      </div>
+      
+      </body>
+      </html>
+
+</body>
+</html>

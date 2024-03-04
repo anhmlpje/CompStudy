@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hedio Kojima Productions</title>
+<style>
+    body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0;
+    background-color: #f0f0f0; /* Light grey background for the body */
+    }
+    .navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.7);
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    }
+    .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    }
+    .navbar a:hover {
+    text-decoration: underline;
+    background-color: transparent;
+    }
+    .navbar img {
+    height: 50px;
+    }
+    .home-link {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    padding-right: 0;
+    }
+    .home-link img {
+    margin-right: 10px;
+    }
+
+  .content {
+    padding-top: 70px; /* Offset for fixed navbar */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between images */
+    justify-content: center;
+    align-items: center;
+  }
+  .content .image-container {
+    flex: 1 1 200px; /* Minimum width of 200px */
+    margin: 20px; /* Space around images */
+    background-color: #d9d9d9; /* Grey background */
+  }
+  .content .image-container img {
+    width: 100%;
+    display: block;
+    margin-bottom: -50px; /* Negative margin to create overlap */
+  }
+  .content .image-container:last-child img {
+    margin-bottom: 0; /* No overlap for the last image */
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="home.html" class="home-link">
+        <img src="Kojima-Productions-Logo.png" alt="Kojima Productions Logo">
+        HOME
+    </a>
+    <a href="about_kojima.html">About Kojima</a>
+    <a href="products.html">Products</a>
+    <a href="photos.html">Photos</a>
+    <a href="contact.html">Contacting World</a>
+    </div>
+
+<div class="content"> 
+  <div class="content">
+    <div class="image-container">
+      <img src="ph1.jpeg" alt="ph1">
+    </div>
+    <div class="image-container">
+      <img src="ph2.jpg" alt="ph2">
+    </div>
+  </div>
+<div class="content">
+    <div class="image-container">
+      <img src="ph3.png" alt="ph3">
+    </div>
+    <div class="image-container">
+      <img src="ph4.jpeg" alt="ph4">
+    </div>
+  </div>
+  <div class="image-container">
+    <img src="ph5.webp" alt="ph5">
+  </div>
+  <div class="image-container">
+    <img src="ph6.jpeg" alt="ph6">
+  </div>
+</div>
+<div class="content">
+    <div class="image-container">
+      <img src="ph7.jpg" alt="ph7">
+    </div>
+    <div class="image-container">
+      <img src="ph8.jpg" alt="ph8">
+    </div>
+</div>
+
+</body>
+</html>
