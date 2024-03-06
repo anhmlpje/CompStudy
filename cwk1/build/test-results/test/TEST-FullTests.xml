@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FullTests" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-03-05T20:55:34" hostname="LAPTOP-VNJ4BMJ6" time="0.009">
+<testsuite name="FullTests" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-03-05T22:44:37" hostname="LAPTOP-VNJ4BMJ6" time="0.009">
   <properties/>
   <testcase name="GPSException if seeking highest point in an empty Track" classname="FullTests" time="0.001"/>
   <testcase name="GPSException if seeking lowest point in an empty Track" classname="FullTests" time="0.001"/>
   <testcase name="Total distance computed correctly" classname="FullTests" time="0.001"/>
   <testcase name="GPSException if fewer than 2 points when computing average speed" classname="FullTests" time="0.001"/>
-  <testcase name="Lowest point of a Track found correctly" classname="FullTests" time="0.002"/>
+  <testcase name="Lowest point of a Track found correctly" classname="FullTests" time="0.001"/>
   <testcase name="Highest point of a Track found correctly" classname="FullTests" time="0.001"/>
   <testcase name="Average speed computed correctly" classname="FullTests" time="0.001"/>
   <testcase name="GPSException if fewer than 2 points when computing distance" classname="FullTests" time="0.001"/>
